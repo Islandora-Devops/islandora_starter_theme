@@ -1,0 +1,291 @@
+/**
+ * Elements
+ * - set element global styles, basically whenever this element appears
+ *   it should look like this by default.
+ ============================================================================ */
+
+body {
+  font-family: $base-font-family;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+// Set display block for html elements.
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+
+// Set a global margin bottom, strip other margins.
+ul,
+ol,
+dd,
+dl,
+p,
+figure,
+pre,
+table,
+hr,
+form,
+fieldset,
+.field,
+.openseadragon-viewer {
+  margin: 0 0 $large;
+}
+
+main {
+  margin-bottom: $x-large;
+}
+
+
+// Paragraph.
+p {
+  // Attempt to hide empty paragraph elements.
+  &:empty {
+    display: none;
+  }
+}
+
+
+// Media.
+img {
+  height: auto;
+  line-height: 0;
+  display: inline-block;
+
+  @if $button-box-shadow != false {
+    padding: 0.25rem;
+    border-width: $border-width;
+    border-style: $border-style;
+    box-shadow: $button-box-shadow;
+  }
+}
+
+
+iframe,
+video,
+.openseadragon-viewer {
+  border-width: $border-width;
+  border-style: $border-style;
+}
+
+
+// Flexible responsive media elements.
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
+
+// // Video element gets width 100%, slightly dangerous.
+// video {
+//   width: 100% !important;
+//   height: auto !important;
+// }
+
+
+// Remove the gap between images, videos, audio and canvas and the bottom of
+// their containers: h5bp.com/i/440.
+img,
+audio,
+canvas,
+video {
+  vertical-align: middle;
+}
+
+
+// make audio/video block level
+audio,
+video {
+  display: block;
+  margin: auto;
+}
+
+
+.field--name-field-media-audio-file,
+.field--name-field-media-video-file {
+  padding: $xx-small;
+}
+
+.media-download {
+  .field--name-field-media-audio-file,
+  .field--name-field-media-video-file {
+    padding: 0;
+  }
+}
+
+
+svg {
+  // Mitigate a bug in old webkit.
+  max-height: 100%;
+
+  // Make IE9 conform to spec.
+  &:not(:root) {
+    overflow: hidden;
+  }
+}
+
+
+// Global caption style.
+figcaption {
+  font-size: $medium * 0.75;
+  line-height: $medium * 1.25;
+  padding: $xx-small 0;
+  margin: auto; // automatic centering, mitigates issues when the viewport is zoomed.
+}
+
+
+
+// Links.
+a {
+  text-decoration: none;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+
+  &:active,
+  &:hover {}
+
+  &:link,
+  &:visited {}
+
+  &:active,
+  &.active {}
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+
+// Equalize margins for indented elements.
+ul,
+ol,
+dl {}
+
+
+// Definition lists.
+dl {}
+
+dt {
+  font-weight: $font-weight-semibold;
+}
+
+dd {
+  margin-left: $medium;
+
+  // RTL
+  [dir="rtl"] & {
+    margin-left: 0;
+    margin-right: $medium;
+  }
+}
+
+
+// Blockquotes, Bootstrap style.
+blockquote {
+  padding: $medium;
+  margin-left: $xxxx-large;
+
+  border-left: 5px solid;
+
+  &.simple-quote {
+    border: 0 none;
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    font-weight: $font-weight-light;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  small {
+    display: block;
+    font-size: $medium * 0.875;
+
+    &:before {
+      content: '\2014 \00A0'; // EM DASH, NBSP
+    }
+  }
+
+  // Float right with text-align: right
+  &.pull-right {
+    padding-right: gutters();
+    border-right: 5px solid;
+
+    p,
+    small {}
+
+    small {
+      &:before {
+        content: '';
+      }
+      &:after {
+        content: '\00A0 \2014'; // NBSP, EM DASH
+      }
+    }
+  }
+}
+
+
+// A better looking default horizontal rule.
+hr {
+  height: $border-width;
+  border: 0;
+  border-top: $border-width $border-style;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+pre {
+  white-space: pre-wrap;
+
+  code {
+    display: block;
+  }
+}
+
+
+// Set hidden styles for non-supporting browsers.
+[hidden] {
+  display: none;
+}

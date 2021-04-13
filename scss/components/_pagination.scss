@@ -1,0 +1,99 @@
+/**
+ * Pagers
+ * - Full system pager.
+ * - Views mini pager.
+ ============================================================================ */
+
+// <nav> element wrapper.
+.exposed-pager nav {
+  // Local reset.
+  ul, ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+.bottom_pager {
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+
+  a.page-link {
+    text-decoration: none;
+  }
+
+  > * {
+    margin: $xx-small $xx-large $xx-small 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  nav {
+    text-align: right;
+    ul, ol {
+      display: inline;
+    }
+  }
+
+  @media #{$wide} {
+    justify-content: flex-end;
+
+    > * {
+      margin: $xx-small 0 $xx-small $xxx-large;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// pager_items is a wrapper and the list root.
+.pagination {
+  padding: 0;
+  margin: 0 auto;
+}
+
+
+// li class for every pager item in any list.
+.page-item,
+.pager__item--next {
+  display: inline-block;
+  margin: 0 0.125rem;
+  text-align: center;
+}
+
+// Pager links are either an <a>, or a <span> for the current item in the
+// Views mini-pager.
+.pagination_option_item__link,
+.pagination .page-link {
+  display: inline-block;
+  border-radius: $border-radius;
+  border: $border-width $border-style;
+  transition: $global-transition;
+  min-width: 1.75em;
+  padding: 2px 7px 1px;
+  margin: 0;
+  line-height: $base-line-height;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+// Active or "current" link.
+.pagination_option_item__link--is-active,
+.page-item.active .page-link {
+  text-decoration: underline;
+  font-weight: $font-weight-bold;
+}

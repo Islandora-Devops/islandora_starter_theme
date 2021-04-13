@@ -1,0 +1,105 @@
+// Navbar nav overrides
+//
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+
+.navbar {
+  padding: 0;
+
+  .navbar-toggler {
+    margin: $global-padding;
+    font-size: $h6-font-size;
+  }
+}
+
+.navbar-nav {
+  margin-left: 0;
+
+  .nav-link {
+    padding: 0;
+    font-size: $h6-font-size;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.menu--main {
+  &.block {
+    margin: 0 0 $medium;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      padding: $xx-small $large;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+
+      span {
+        border-bottom: $border-width-heavy $border-style;
+        padding-bottom: $xxx-small;
+      }
+    }
+
+    @media #{$wide} {
+      margin-left: -$large;
+    }
+  }
+}
+
+.dropdown-menu {
+  padding: 0;
+  margin-top: 0;
+  border: none;
+
+  .dropdown-item {
+    padding: 0;
+
+    a {
+      display: block;
+      padding: $xx-small $large;
+      font-size: $h6-font-size;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+
+      span {
+        border-bottom: $border-width-heavy $border-style;
+        padding-bottom: $xxx-small;
+      }
+    }
+  }
+}
+
+// Button for toggling the navbar when in its collapsed state
+.navbar-toggler {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+// Generate series of `.navbar-expand-*` responsive classes for configuring
+// where your navbar collapses.
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-up($next) {
+
+        .navbar-nav {
+          .nav-link {
+            padding: $xx-small $large;
+          }
+        }
+      }
+    }
+  }
+}

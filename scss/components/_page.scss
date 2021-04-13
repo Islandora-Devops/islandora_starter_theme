@@ -1,0 +1,103 @@
+/**
+ * @file
+ * Styles for Bootstrap Barrio page.
+ */
+
+// Override Bootstrap defaults
+.container,
+.col {
+  padding-left: $global-padding;
+  padding-right: $global-padding;
+}
+
+.row {
+  margin-left: -$global-padding;
+  margin-right: -$global-padding;
+}
+
+// Banner image
+.page__row--has-bg {
+  height: 50vh;
+  max-height: 26em;
+  min-height: 12em;
+  background-size: cover;
+  background-position: center;
+}
+
+
+// Block defaults
+.block {
+  margin: $global-padding 0;
+
+  @media #{$tablet} {
+    margin: $x-large 0;
+  }
+}
+
+
+// Regions wrapper.
+.regions {
+  border: $global-padding solid;
+  border-bottom: 0;
+}
+
+
+// Footer
+.site-footer {
+ &__top.clearfix {
+   border: 0;
+   padding: $x-large $global-padding;
+   display: block;
+
+   @media #{$wide} {
+     display: flex;
+   }
+ }
+
+ .region-footer {
+   &-first {
+     .block {
+       margin-bottom: $x-large;
+
+       &:last-of-type {
+         margin-bottom: $x-large;
+
+         .block__inner {
+           padding-bottom: 0;
+         }
+       }
+
+       .field {
+         margin-bottom: 0;
+       }
+
+       @media #{$wide} {
+          margin-top: 0;
+       }
+     }
+   }
+   &-second {
+     .menu {
+       column-count: 2;
+     }
+   }
+
+   @media #{$tablet} {
+     &-first {
+       .block__inner,
+       .content {
+         margin-right: $xx-large;
+         padding-right: $x-large;
+       }
+     }
+   }
+ }
+}
+
+.region-footer-fifth {
+   padding: $global-padding;
+
+   @media #{$tablet} {
+     padding: $global-padding 0;
+   }
+}

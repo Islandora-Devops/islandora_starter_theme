@@ -1,0 +1,114 @@
+/* TYPOGRAPHY for BD Bootstrap Barrio, with variables brought over from Carapace/Adaptivetheme */
+
+/* Google Fonts */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic,900,900italic");
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif:      Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25;
+$font-size-sm: $font-size-base * .875;
+$font-size-xs: $font-size-base * .75;
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-weight-base: $font-weight-normal;
+$line-height-base: $base-line-height;
+$headings-margin-bottom: 0.75em;
+$headings-font-weight: $font-weight-bold;
+$headings-line-height: $line-height-base;
+
+
+
+// Headings.
+#{headings(all)} {
+  margin: 0 0 $medium;
+  font-weight: $font-weight-bold;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin: 0 0 $headings-margin-bottom;
+  clear: both;
+}
+h1, .h1 {
+  margin-top: 0.25em;
+}
+.view-list .node__details h2 a,
+.view-grid .node__details h2 a {
+    text-decoration: none;
+}
+$h1-font-size: $xxx-large;
+$h2-font-size: $base-font-size * 2;
+$h3-font-size: $base-font-size * 1.75;
+$h4-font-size: $base-font-size * 1.5;
+$h5-font-size: $base-font-size * 1.25;
+$h6-font-size: $base-font-size * 1.125;
+
+.block__title {
+  font-size: $h5-font-size;
+}
+
+// Style anchor elements.
+$link-decoration: none;
+$link-hover-decoration: none;
+
+article,
+details,
+.site-footer .nav-item,
+.site-footer .field__item {
+  a {
+    border-bottom: 1px dotted;
+
+    &:hover,
+    &:focus {
+      text-decoration: $link-hover-decoration;
+      border-bottom-style: solid;
+    }
+  }
+}
+
+// =============================================================================
+//
+//      Typography
+//
+// =============================================================================
+
+$base-line-height            : 24px;
+
+$min-line-padding            : 2px;
+$min-line-margin             : 2px;
+
+
+// Font Weights
+// -----------------------------------------------------------------------------
+$font-weight-bold     : 700;
+$font-weight-semibold : 600;
+$font-weight-normal   : 400;
+$font-weight-light    : 300;
+
+
+// Font Families
+// Same stacks as in the theme font settings (web safe stacks).
+// -----------------------------------------------------------------------------
+$wide-sans-serif   : Verdana, Geneva, sans-serif;
+$medium-sans-serif : "Segoe UI", Segoe, Tahoma, Geneva, sans-serif;
+$narrow-sans-serif : "Helvetica Neue", Helvetica, Arial, sans-serif;
+$wide-serif        : Georgia, Utopia, Palatino, "Palatino Linotype", serif;
+$narrow-serif      : "Times New Roman", Times, serif;
+$monospace         : "Courier New", Courier, monospace;
+$impact            : Impact, "Helvetica Inserat", "Arial Black", sans-serif;
+$sans-serif        : sans-serif;
+$serif             : serif;
+
+// Set default font families.
+$base-font-family : $font-family-base;
+$font-monospace   : $monospace;

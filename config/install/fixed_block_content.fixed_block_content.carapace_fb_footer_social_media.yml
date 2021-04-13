@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_social_media
+id: carapace_fb_footer_social_media
+title: 'Footer: Social Media'
+block_content_bundle: carapace_cb_footer_social_media
+default_content: null
+auto_export: 1
+protected: true

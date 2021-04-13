@@ -1,0 +1,61 @@
+/**
+ * @file
+ * Footer Styling for BD Bootstrap Barrio
+ */
+
+.site-footer {
+
+  &__top {
+    .row {
+      display: block;
+    }
+
+    @media #{$wide} {
+      display: flex;
+
+      .region-footer {
+        &-first {
+          min-width: 30%;
+        }
+        &-second {
+          min-width: 40%;
+        }
+      }
+
+      .row + .row {
+        margin-left: $global-padding-percent;
+      }
+    }
+  }
+
+  &__bottom {}
+
+  .site-branding {
+    &__logo-link {
+      margin-right: 0;
+    }
+    &__logo-img {
+      width: 80%;
+    }
+    &__name {
+      font-size: $base-font-size * 1.5;
+    }
+    &__slogan {
+      font-size: $base-font-size;
+    }
+  }
+
+  nav {
+    margin: $x-large 0;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: $base-font-size;
+    padding-bottom: $medium;
+    display: inline-block;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+}

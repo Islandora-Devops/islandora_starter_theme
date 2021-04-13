@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+id: carapace_fb_disclaimer
+title: Disclaimer
+block_content_bundle: basic
+default_content: null
+auto_export: 1
+protected: true

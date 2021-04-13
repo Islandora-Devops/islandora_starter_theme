@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_social_media
+    - field.storage.block_content.field_carapace_cb_youtube
+  module:
+    - link
+id: block_content.carapace_cb_footer_social_media.field_carapace_cb_youtube
+field_name: field_carapace_cb_youtube
+entity_type: block_content
+bundle: carapace_cb_footer_social_media
+label: YouTube
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

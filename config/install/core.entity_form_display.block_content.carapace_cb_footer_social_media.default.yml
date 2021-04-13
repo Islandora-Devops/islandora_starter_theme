@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_social_media
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_facebook
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_flickr
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_instagram
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_linkedin
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_pinterest
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_twitter
+    - field.field.block_content.carapace_cb_footer_social_media.field_carapace_cb_youtube
+  module:
+    - link
+id: block_content.carapace_cb_footer_social_media.default
+targetEntityType: block_content
+bundle: carapace_cb_footer_social_media
+mode: default
+content:
+  field_carapace_cb_facebook:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_carapace_cb_flickr:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_carapace_cb_instagram:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_carapace_cb_linkedin:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_carapace_cb_pinterest:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_carapace_cb_twitter:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_carapace_cb_youtube:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  info: true
+  langcode: true

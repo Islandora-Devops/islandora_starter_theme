@@ -1,0 +1,516 @@
+/**
+ * @file
+ * Visual styles for Bootstrap Barrio's form components.
+ */
+
+.form-required::after {
+    content: '';
+    vertical-align: super;
+    display: inline-block;
+    background-image: url(../../images/required.svg);
+    background-repeat: no-repeat;
+    background-size: ($input-height / 2) ($input-height / 2);
+    width: ($input-height / 2);
+    height: ($input-height / 2);
+    margin: 0 0.3em;
+}
+
+.form-row>fieldset,
+.form-row>div {
+  padding-right: 5px;
+  padding-left: 5px;
+  flex: 0 1 auto;
+  width: auto;
+  max-width: none;
+}
+
+.form-row .form-actions {
+  align-self: flex-end;
+}
+
+form .filter-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+form .form-type-textarea {
+    margin-bottom: 0;
+}
+
+/**
+ * Form Base
+ * Set base styles for form elements.
+ ============================================================================ */
+
+input,
+select,
+button,
+textarea {
+  font-size: $medium;
+}
+
+
+// Select, Textarea and most input types.
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  max-width: 100%;
+  width: 99.999%; // prevent weird overflows when zoomed
+  box-sizing: border-box;
+  border-radius: $form-border-radius;
+  border: $form-border-width $form-border-style;
+  transition: $global-transition;
+
+  &:focus {
+    outline: 0;
+    outline: thin dotted \9; // IE9
+  }
+
+  &:hover,
+  &:focus {}
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {}
+  }
+}
+
+
+input {
+  line-height: 1; // reset line-height
+  vertical-align: middle; // make sure this happens
+  height: $form_input_height;
+  padding: 0 $xx-small;
+}
+
+
+// Checkbox, radio, file.
+input {
+  &[type="checkbox"],
+  &[type="radio"] {
+    min-width: 13px;
+    display: inline-block;
+    position: relative;
+    bottom: 1px;
+
+    // Fix Safari issue with moving options.
+    width: auto;
+    height: auto;
+    transform: scale(1);
+  }
+
+  // Focus for file, radio and checkbox.
+  &[type="file"]:focus,
+  &[type="radio"]:focus,
+  &[type="checkbox"]:focus {}
+}
+
+
+// Stop iOS/webkit styling form elements.
+textarea,
+button,
+.button,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="submit"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+  -webkit-appearance: none;
+}
+
+
+// Just remove the box shadow form some inputs in webkit.
+input[type="time"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"] {
+  background-clip: padding-box;
+}
+
+
+// Remove all the special stuff webkit adds to
+// search fields, it's a PITA to theme.
+input[type="search"] {
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+// Select.
+select {
+  height: $form_input_button_select_height;
+  > option {}
+}
+
+
+textarea {
+  padding: $xx-small;
+}
+
+
+// Set height auto for textarea and selects.
+textarea,
+select[size],
+select[multiple] {
+  height: auto;
+}
+
+
+// Label.
+label {
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+
+  // radio, checkbox options
+  &.option {
+    font-weight: normal;
+    display: inline-block;
+  }
+}
+
+
+// Fieldset.
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+// Legend.
+legend {}
+
+
+// Details.
+details {
+  display: block; // Firefox seems to need this?
+  margin: $global-padding 0;
+  overflow-y: hidden;
+  transition: all 450ms ease-in-out;
+
+  details {
+    border: $border-width $border-style;
+    margin: $global-padding;
+  }
+
+  .details-wrapper {
+    transition: all 650ms ease-in-out;
+  }
+
+  .js & {
+    &:not([open]) {
+      .details-wrapper {
+        display: block;
+        visibility: hidden;
+        opacity: 0.1;
+      }
+    }
+
+    &[open] {
+      .details-wrapper {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .details__content {
+        animation-name: slideDown;
+        animation-duration: 200ms;
+        animation-timing-function:cubic-bezier(0, 0, 1, 0);
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 20px;
+  }
+}
+
+
+// Summary.
+summary {
+  cursor: pointer;
+  display: block; // Firefox seems to need this?
+  padding: $x-small;
+  border: $border-width $border-style;
+}
+
+// .details__content details,
+.accordion--periodicals summary {
+  font-size: $large;
+  font-weight: $font-weight-bold;
+}
+
+.details__content {
+  .accordion__toggle {
+    padding: $medium ($medium + $xxx-small) 0;
+
+    a {
+      white-space: nowrap;
+      margin-right: $x-small;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    padding: $global-padding $medium $global-padding ($xx-large + $xxx-small);
+    list-style: none;
+
+    a {
+      margin: $medium 0;
+      display: inline-block;
+      font-size: $large;
+    }
+  }
+}
+
+// Buttons
+button,
+.button {
+  width: auto;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: $button-border-radius;
+  border-width: $button-border-width;
+  border-style: $button-border-style;
+  transition: background-color, .15s, ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: $button-text-align;
+  font-weight: $font-weight-normal;
+  white-space: nowrap;
+  text-transform: $button-text-transform;
+  min-height: $form_input_button_select_height;
+  padding: 0 $large;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &[disabled] {
+    &:hover {}
+  }
+}
+
+// Button styles for things that are not actually button elements.
+.button {
+  display: flex;
+  align-items: center;
+}
+
+// Action button
+// - are links with an icon, and we add an icon for extra visibility.
+.button-action {
+  display: inline-block;
+  line-height: 2;
+
+  &:before {
+    display: none;
+  }
+}
+
+
+// Action links wrappers.
+.action-links {
+  &__button {
+    padding: 0;
+    margin: $medium 0;
+
+    @media #{$mobile-isolate} {
+      a {
+        display: block;
+      }
+    }
+  }
+}
+
+.button-wrapper {
+  .button {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.field--name-field-description {
+  .button-wrapper {
+    display: none;
+  }
+}
+
+// Styles for link buttons and action links.
+li[class*="action--"] {
+  list-style: none;
+  padding: 0;
+  margin: $medium 0;
+}
+
+.media-download {
+  @media #{$tablet} {
+    display: flex;
+    justify-content: space-between;
+
+    // Margin for download button
+    > div:first-of-type {
+      margin-right: 1rem;
+
+      + div {
+        text-align: right;
+      }
+    }
+  }
+
+  label {
+    display: inline-block;
+  }
+}
+
+button.close {
+  box-shadow: none;
+}
+
+// Node link buttons
+.node__links {
+  clear: both;
+
+  ul.links.inline {
+    @include clearfix-micro;
+
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    li {
+      flex: 0 0 auto;
+      margin: 0 $medium 0 0;
+      display: inline-block;
+    }
+
+    a {
+      padding: $xxxx-small $xx-small;
+      border-radius: $border-radius;
+
+      &.node-readmore__link {
+        border-radius: $button-border-radius;
+        border-width: $button-border-width;
+        border-style: $button-border-style;
+        text-transform: $button-text-transform;
+        padding: $xxx-small $large;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
+// Readonly.
+input,
+select,
+textarea {
+  &[readonly] {}
+}
+
+
+// Disabled.
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled],
+a.button_disabled {
+  box-shadow: none;
+  opacity: 0.7;
+  user-select: none;
+  cursor: default;
+}
+
+
+// Invalid.
+input,
+button,
+.button,
+select,
+textarea {
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &:focus:invalid {}
+}
+
+
+// Placeholders.
+input::-webkit-input-placeholder {}
+textarea::-webkit-input-placeholder {}
+
+input:-moz-placeholder {}
+textarea:-moz-placeholder {}
+
+input::-moz-placeholder {}
+textarea::-moz-placeholder {}
+
+input:-ms-input-placeholder {}
+textarea:-ms-input-placeholder {}
+
+input.placeholder_text {}
+textarea.placeholder_text {}
+
+
+// Hide placeholders on focus.
+input:focus::-webkit-input-placeholder {opacity: 0.2}
+input:focus:-moz-placeholder {opacity: 0.2}
+input:focus::-moz-placeholder {opacity: 0.2}
+input:focus:-ms-input-placeholder {opacity: 0.2}
+
+// Contact Form
+.form-actions {
+  button {
+    display: inline-block;
+    margin: $medium $xx-small $medium 0;
+  }
+}
+
+fieldset label {
+  margin-top: $medium;
+}

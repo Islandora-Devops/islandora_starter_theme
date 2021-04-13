@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_contact
+    - field.field.block_content.carapace_cb_footer_contact.field_carapace_cb_email
+    - field.field.block_content.carapace_cb_footer_contact.field_carapace_cb_inst_address
+    - field.field.block_content.carapace_cb_footer_contact.field_carapace_cb_phone
+  module:
+    - text
+id: block_content.carapace_cb_footer_contact.default
+targetEntityType: block_content
+bundle: carapace_cb_footer_contact
+mode: default
+content:
+  field_carapace_cb_email:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_carapace_cb_inst_address:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_carapace_cb_phone:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

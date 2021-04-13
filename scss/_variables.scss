@@ -1,0 +1,643 @@
+//
+// Variable Settings for BD Bootstrap Barrio, with variables brought over from Carapace/Adaptivetheme
+//
+// This file sets global variables that will change many style aspects of the
+// theme. You can achieve a lot simply by tweaking the values of variables.
+//
+
+// Base font-size
+// -----------------------------------------------------------------------------
+$base-font-size : 1rem;
+$base-line-height: 1.5;
+
+// Size variables
+// -----------------------------------------------------------------------------
+
+$xxxx-large : $base-font-size * 3.375;
+$xxx-large  : $base-font-size * 2.625;
+$xx-large   : $base-font-size * 2;
+$x-large    : $base-font-size * 1.625;
+$large      : $base-font-size * 1.25;
+$medium     : $base-font-size;
+$small      : $base-font-size * 0.75;
+$x-small    : $base-font-size * 0.625;
+$xx-small   : $base-font-size * 0.5;
+$xxx-small  : $base-font-size * 0.375;
+$xxxx-small : $base-font-size * 0.3125;
+
+
+// =============================================================================
+//
+//      Global Defaults
+//
+// =============================================================================
+
+
+// Global padding
+// Matches the global padding set in the layout (e.g. flex-builder). We use this
+// to ensure things like gutters are teh same everywhere, or use it recalculate
+// gutters, e.g. if we want to double it.
+$global-padding: 0.625rem;
+$global-padding-percent: 6%;
+
+
+// Lighten and Darken
+// -----------------------------------------------------------------------------
+$lighten      : 3%;
+$lighten-more : 5%;
+$lighten-most : 10%;
+$darken       : 3%;
+$darken-more  : 5%;
+$darken-most  : 10%;
+
+
+// Global Transition
+// -----------------------------------------------------------------------------
+$global-transition: all, .2s, ease-in-out;
+
+
+// Color module
+// -----------------------------------------------------------------------------
+$base-color               : #000000;
+
+// Text colors
+// -----------------------------------------------------------------------------
+$text-color               : #1a2747;
+$text-color-light         : #dbf5f0;
+$text-color-medium        : #0c6170;
+
+$text-background-color-light  : $text-color-light;
+$text-background-color-normal : #ffffff;
+$text-background-color-dark   : $text-color-medium;
+$text-background-color-semi-transparent: rgba(255, 255, 255, 0.75);
+
+$site-name : $text-color-medium;
+
+// Link colors
+// -----------------------------------------------------------------------------
+$link-color               : $text-color-medium;
+$link-alt-color           : #0e7e92;
+$link-hover-color         : $link-alt-color;
+$link-active-color        : $link-alt-color;
+$link-visited-color       : $link-alt-color;
+$link-visited-hover-color : $link-alt-color;
+$link-alt-hover-color     : $link-alt-color;
+$link-alt-active-color    : $text-color;
+
+
+// Borders
+// -----------------------------------------------------------------------------
+$border-width             : 1px;
+$border-width-heavy       : 0.25rem;
+$border-style             : solid;
+$border-color             : #e5e5e5;
+$border-color-light       : #f5f5f5;
+$border-color-alt         : #a4e5e0;
+$border-radius            :  0.125em;
+$border-radius-round      : 1em;
+$pagination-active-border-color : $border-color;
+
+
+// Success colors
+// -----------------------------------------------------------------------------
+$success-text-color       : $text-color;
+$success-border-color     : $border-color-alt;
+$success-background-color : $text-color-light;
+
+
+// Warning colors
+// -----------------------------------------------------------------------------
+$warning-text-color       : $text-color;
+$warning-border-color     : $border-color-alt;
+$warning-background-color : $text-color-light;
+
+
+// Error colors
+// -----------------------------------------------------------------------------
+$error-text-color         : #a51b00;
+$error-border-color       : #f9c9bf;
+$error-background-color   : #fcf4f2;
+
+
+// Marker colors
+// -----------------------------------------------------------------------------
+$marker-color                    : #ffffff;
+$marker-background-color         : $text-background-color-normal;
+$marker-info-background-color    : #0074bd;
+$marker-success-background-color : #77b259;
+$marker-warning-background-color : #e09600;
+$marker-error-background-color   : #e62600;
+
+
+// Selection color
+// -----------------------------------------------------------------------------
+$selection-color : #b3d4fc;
+
+
+// Zebra striping
+// -----------------------------------------------------------------------------
+$odd-color  : transparent;
+$even-color : $text-background-color-normal;
+
+
+
+// Barrio colors
+$primary-shade: $text-color-medium;
+$primary-light: lighten($primary-shade, 37%);
+$primary-dark: darken($primary-shade, 12%);
+$accent-shade: $text-color-light;
+$accent-light: lighten($accent-shade, 37%);
+$accent-dark: darken($accent-shade, 12%);
+$brand-inverse: $primary-shade;
+
+// Reassign color vars to semantic color scheme
+$red: #dc3545;
+$yellow: #ffc107;
+$green: #28a745;
+$cyan: #17a2b8;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-800: #343a40;
+$theme-colors: ( primary: $accent-shade, secondary: $primary-shade, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
+$brand-primary: $accent-shade;
+
+
+// Body
+$body-bg: $white;
+$body-color: $gray-800;
+$inverse-bg: $primary-shade;
+$inverse-color: $white;
+
+
+// =============================================================================
+//
+//       Component Partials and Mixin Variables.
+//
+// =============================================================================
+
+// Page, Regions, Blocks and element specific styles.
+// -----------------------------------------------------------------------------
+
+// body element.
+$body-background-color    : #ffffff;
+
+// .page, an inner-body full width page background.
+$page-background-color    : #ffffff;
+
+// Wrapper around regions, the max-width is set on this wrapper.
+$regions-background-color : #ffffff;
+
+
+// Page Row colors - for the site-builder layout plugin.
+// -----------------------------------------------------------------------------
+
+// Full width background toggle.
+$page-row-fullwidth : false;
+$regions-padding    : $medium;
+
+// Leaderboard.
+$page-leaderboard-color                : #ffffff;
+$page-leaderboard-background-color     : $text-color-medium;
+
+// Header.
+$page-header-color                     : $text-color-medium;
+$page-header-background-color          : $text-color-light;
+
+// Navbar.
+$page-navbar-color                     : $text-color-medium;
+$page-navbar-background-color          : $text-color-light;
+$page-navbar-hover-background-color    : $page-navbar-color;
+
+// Highlighted.
+$page-highlighted-color                : $text-color;
+$page-highlighted-background-color     : $border-color-alt;
+
+// Features.
+$page-features-color                   : $text-color;
+$page-features-background-color        : $regions-background-color;
+
+// Content prefix.
+$page-content-prefix-color             : $text-color;
+$page-content-prefix-background-color  : $regions-background-color;
+
+// Main.
+$page-main-color                       : $text-color;
+$page-main-background-color            : $regions-background-color;
+
+// Content suffix.
+$page-content-suffix-color             : $text-color;
+$page-content-suffix-background-color  : $regions-background-color;
+
+// Sub features.
+$page-subfeatures-color                : $text-color;
+$page-subfeatures-background-color     : $regions-background-color;
+
+// Footer (+ footer cols)
+$page-footer-color                     : $text-color-medium;
+$page-footer-background-color          : $text-color-light;
+
+// Footer (+ footer cols)
+$page-footer-disclaimer-color          : $text-color;
+$page-footer-disclaimer-background-color : $border-color-alt;
+
+
+// Branding
+// -----------------------------------------------------------------------------
+$site-name-color                   : $link-color;
+$site-slogan-color                 : $text-color;
+
+
+// Blocks
+// -----------------------------------------------------------------------------
+$block-color                       : $text-color;
+$block-background-color            : #ffffff;
+
+$block-title-color                 : $text-color;
+$block-title-background-color      : #ffffff;
+
+$block-link-color                  : $link-color;
+
+// Sidebar blocks
+$sidebar-block-header-background-color : $border-color-alt;
+$sidebar-block-header-color            : $text-color;
+$sidebar-block-body-background-color   : $text-color-light;
+$sidebar-block-body-color              : $text-color;
+
+
+
+// Menus
+// -----------------------------------------------------------------------------
+// $menu-text-align                   : $flow-from; // ltr or from-left
+
+$menu-color                        : $link-color;
+$menu-hover-color                  : $link-hover-color;
+$menu-active-color                 : $link-active-color;
+
+$menu-border-color                 : $border-color;
+$menu-border-hover-color           : $border-color;
+$menu-border-active-color          : $border-color;
+
+$menu-background-color             : $regions-background-color;
+$menu-background-hover-color       : $text-background-color-normal;
+$menu-background-active-color      : $text-background-color-normal;
+
+$menu-border-width                 : $border-width;
+$menu-border-style                 : $border-style;
+$menu-border-radius                : $border-radius;
+
+$menu-arrows                       : true;
+
+
+// Responsive Menus
+// -----------------------------------------------------------------------------
+
+$resp-menu-color                   : $page-navbar-color;
+$resp-menu-background-color        : $page-navbar-background-color;
+
+$resp-menu-hover-color             : $page-navbar-background-color;
+$resp-menu-active-color            : $page-navbar-background-color;
+
+$resp-menu-hover-background-color  : $page-navbar-color;
+$resp-menu-active-background-color : $page-navbar-color;
+
+$resp-menu-z-index                 : 480;
+$resp-menu-arrows                  : true;
+
+// Drop Menu
+$dropmenu-item-width               : 12em;
+$dropmenu-arrows                   : true;
+
+
+// Nodes
+// -----------------------------------------------------------------------------
+$node-teaser-color                 : $text-color;
+$node-background-color             : #ffffff;
+$node-teaser-background-color      : $node-background-color;
+
+$node-teaser-border-color          : $border-color;
+$node-teaser-border-width          : $border-width;
+$node-teaser-border-style          : $border-style;
+
+$node-box-shadow                   : 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+$node-teaser-box-shadow            : none;
+
+$node-links-color                  : $text-color;
+$node-links-background-color       : $text-background-color-normal;
+
+
+// Forms & Dialog
+// -----------------------------------------------------------------------------
+$form-text-align                   : center;
+
+$form-text-color                   : $text-color;
+$form-text-focus-color             : $text-color;
+
+$form-border-color                 : $border-color;
+$form-border-focus-color           : $border-color;
+
+$form-background-color             : $node-background-color;
+$form-background-focus-color       : $form-background-color;
+
+$form-help-color                   : $text-color;
+$form-marker-color                 : #ee0000; // bright red, styles the asterisk (*) on required form fields.
+
+$form-border-width                 : $border-width;
+$form-border-style                 : $border-style;
+$form-border-radius                : $border-radius;
+
+$form_input_height                 : $xx-large;
+$form_input_button_select_height   : $form_input_height;
+$form-box-shadow                   : false;
+
+$form-details-background-color     : $border-color;
+$form-group-margin-bottom          : 0;
+
+
+// Vertical Tabs
+// -----------------------------------------------------------------------------
+$vertical-tabs-color                 : $text-color;
+$vertical-tabs-border-color          : $form-border-color;
+$vertical-tabs-background-color      : $form-background-color;
+
+$vertical-tabs-menu-background-color : $form-background-color;
+$vertical-tabs-selected-color        : $sidebar-block-body-background-color;
+
+
+// Buttons
+// -----------------------------------------------------------------------------
+$button-text-align                 : center;
+
+$button-color                      : $text-background-color-normal ;
+$button-hover-color                : $button-color;
+
+$button-text-transform             : uppercase;
+
+$button-background-color           : $text-color-medium;
+$button-background-hover-color     : $button-background-color;
+
+$button-border-color               : $button-background-color;
+$button-border-width               : $border-width;
+$button-border-style               : $border-style;
+$button-border-radius              : $border-radius-round;
+
+$button-box-shadow                 : 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+
+// Button Primary
+$button-primary-text-color         : $button-color;
+$button-primary-background-color   : $link-color;
+$button-primary-border-color       : $link-color;
+
+// Button Secondary
+$button-secondary-text-color       : $link-color;
+$button-secondary-background-color : $text-background-color-light;
+$button-secondary-border-color     : $text-background-color-light;
+$button-secondary-background-hover-color: $border-color-alt;
+
+
+// Tabs
+// -----------------------------------------------------------------------------
+$tab-text-align                    : center;
+
+$tab-color                         : $text-color;
+$tab-hover-color                   : $text-color;
+$tab-active-color                  : $text-color;
+
+$tab-border-color                  : $border-color;
+$tab-border-hover-color            : $border-color;
+$tab-border-active-color           : $border-color;
+
+//$tab-background-color             : $text-background-color-normal;
+$tab-background-color              : $regions-background-color;
+
+$tab-background-hover-color        : $text-background-color-normal;
+$tab-background-active-color       : $text-background-color-normal;
+
+$tab-border-width                  : $border-width;
+$tab-border-style                  : $border-style;
+$tab-border-radius                 : $border-radius;
+
+$tab-box-shadow                    : false;
+
+
+// Lists
+// -----------------------------------------------------------------------------
+$list-text-align                   : center;
+
+$list-color                        : $text-color;
+$list-hover-color                  : $text-color;
+$list-active-color                 : $text-color;
+
+$list-border-color                 : $border-color;
+$list-border-hover-color           : $border-color;
+$list-border-active-color          : $border-color;
+
+//$list-background-color            : $text-background-color-normal;
+$list-background-color             : $regions-background-color;
+
+$list-background-hover-color       : $text-background-color-normal;
+$list-background-active-color      : $text-background-color-normal;
+
+$list-border-width                 : $border-width;
+$list-border-style                 : $border-style;
+$list-border-radius                : $border-radius;
+
+
+// Breadcrumbs
+// -----------------------------------------------------------------------------
+$breadcrumb-color                  : $link-color;
+$breadcrumb-bg                     : $text-background-color-normal;
+
+$breadcrumb-hover-color            : $link-color;
+$breadcrumb-active-color           : $link-color;
+
+$breadcrumb-visited-color          : $link-visited-color;
+$breadcrumb-visited-hover-color    : $link-visited-color;
+
+$breadcrumb-separator-color        : $border-color;
+$breadcrumb-divider-color          : $border-color;
+
+$breadcrumb-separator-icon:        ">";
+
+
+// Tables
+// -----------------------------------------------------------------------------
+$table-cell-borders                : true; // set to false to remove td/th borders
+$table-border-color                : $border-color;
+
+// thead.
+$thead-background-color            : $sidebar-block-body-background-color;
+$thead-text-color                  : $text-color;
+
+// Row striping.
+$table-row-striping                : false;
+$table-row-odd-color               : $odd-color;
+$table-row-even-color              : $even-color;
+
+// Col striping - applies to the active column in sortable tables.
+$table-col-striping                : false;
+$table-col-odd-color               : $text-background-color-light;
+$table-col-even-color              : $regions-background-color;
+
+// Hover
+$tr-hover                          : false;
+$tr-hover-color                    : $text-background-color-normal;
+
+
+// Fields
+// -----------------------------------------------------------------------------
+// By default we only have settings for taxonomy term reference fields (tags).
+$field-taxonomy-item-as-labels     : false;
+$field-taxonomy-item-icons         : true;
+$field-taxonomy-label-as-icon      : false; // Label must not be hidden in field display settings.
+
+
+// Font Icons
+// -----------------------------------------------------------------------------
+// AT uses Font Awesome by default for most icons, including replacing Drupal
+// core icons for things like details summery, action links, messages, file
+// types, menu items, slideshow and probably others. Some icons are svg inline
+// (forum and RSS), and the search icon is an svg background image.
+
+// $icon-font                         : FontAwesome, sans-serif;
+//
+// // Menu.
+// $menu-arrow-left                   : $fa-var-angle-left;
+// $menu-arrow-right                  : $fa-var-angle-right;
+// $menu-arrow-up                     : $fa-var-angle-up;
+// $menu-arrow-down                   : $fa-var-angle-down;
+// $menu-hamburger                    : $fa-var-bars; // deprecated, now uses embedded SVG
+//
+// // Forms.
+// $form-details-summary-open         : $fa-var-caret-down;
+// $form-details-summary-closed       : $fa-var-caret-right;
+// $form-details-summary-closed-rtl   : $fa-var-caret-left;
+//
+// // Buttons.
+// $button-action-icon                : $fa-var-plus;
+// $button-action-login-icon          : $fa-var-user;
+//
+// // Slideshow.
+// $slide-direction-previous          : $fa-var-chevron-left;
+// $slide-direction-next              : $fa-var-chevron-right;
+//
+// // File types.
+// $file-default-icon                 : $fa-var-file-o;
+// $file-archive-icon                 : $fa-var-file-archive-o;
+// $file-spreadsheet-icon             : $fa-var-file-excel-o;
+// $file-office-document-icon         : $fa-var-file-word-o;
+// $file-presentation-icon            : $fa-var-file-powerpoint-o;
+// $file-code-icon                    : $fa-var-file-code-o;
+// $file-plain-text-file-icon         : $fa-var-file-text-o;
+// $file-pdf-icon                     : $fa-var-file-pdf-o;
+// $file-audio-icon                   : $fa-var-file-audio-o;
+// $file-video-icon                   : $fa-var-file-video-o;
+// $file-image-icon                   : $fa-var-file-image-o;
+//
+// // Help - e.g. formatting tips link icon.
+// $help-icon                         : $fa-var-question-circle;
+//
+// // Breadcrumb.
+// $breadcrumb-separator-icon         : $fa-var-angle-right;
+//
+// // Labels.
+// $more-link-use-icon                : false;
+// $more-link-icon                    : $fa-var-caret-right;
+//
+// // Taxonomy.
+// $field-taxonomy-label-icon         : $fa-var-tags;
+// $field-taxonomy-item-icon          : $fa-var-tag;
+//
+// // Elements.
+// $blockquote-icon                   : $fa-var-quote-left;
+// $blockquote-color                  : #767676;
+// $blockquote-background-color       : inherit;
+// $blockquote-small-color            : $blockquote-color;
+//
+// // Messages.                       // FontAwesome variables
+// $messages-status-icon              : $fa-var-smile-o;
+// $messages-warning-icon             : $fa-var-exclamation-triangle;
+// $messages-error-icon               : $fa-var-frown-o;
+//
+// // Table sort.
+// $table-sort-asc                    : $fa-var-caret-down;
+// $table-sort-desc                   : $fa-var-caret-up;
+//
+// // Feed icon
+// $feed-icon-fill                    : $text-color;
+
+
+// States - e.g. sticky, promoted etc.
+// -----------------------------------------------------------------------------
+$sticky-color                      : $text-color;
+$sticky-background-color           : $regions-background-color;
+
+$promoted-color                    : $text-color;
+$promoted-background-color         : $regions-background-color;
+
+$unpublished-color                 : #fff4f4;
+$unpublished-background-color      : darken($unpublished-color, $darken-more);
+
+$preview-color                     : $text-color;
+$preview-background-color          : #ffffea;
+
+
+// Patterns
+// -----------------------------------------------------------------------------
+// Patterns are image files that can be set on the page and row backgrounds.
+$patterns: (
+  pattern-1,
+  pattern-2,
+  pattern-3,
+  pattern-4,
+  pattern-5,
+  pattern-6,
+  pattern-7,
+  pattern-8,
+  pattern-9,
+  pattern-10,
+  pattern-11,
+  pattern-12,
+  pattern-13,
+  pattern-14,
+  pattern-15,
+  pattern-16
+); // A list of pattern file names
+
+// =============================================================================
+//
+//      Breakpoints / Media Queries
+//
+// =============================================================================
+//
+// Based on the Adaptivetheme breakpoints
+//
+// SEE: adaptivetheme/at_core/at_core.breakpoints.yml
+//
+// These breakpoints use ems, which mean they are dependant on the base font
+// size,so any pixel equivalents stated here assume base font size of 16px.
+// Change them to suit your requirements.
+//
+// Isolate with min/max.
+$mobile-isolate : "all and (max-width: 45em)";
+$tablet-isolate : "all and (min-width: 45.063em) and (max-width: 60em)";
+$wide-isolate   : "all and (min-width: 60.063em) and (max-width: 120em)";
+// Min width only.
+$tablet         : "all and (min-width: 45.063em)";
+$wide           : "all and (min-width: 60.063em)";
+$huge           : "all and (min-width: 120.063em)";
+$mobile         : "all and (min-width: 60em)";
+
+
+/*============================================================================ */
+
+
+/**
+* Barrio
+============================================================================ */
+// Comments
+$comment-spacer-x: 1.25em;
+$comment-spacer-y: 1.25em;
+// Responsive font sizes
+$enable-responsive-font-sizes: true;
+$enable-shadows: false;
+$enable-gradients: false;

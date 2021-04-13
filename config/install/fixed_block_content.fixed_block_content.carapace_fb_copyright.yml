@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_copyright
+id: carapace_fb_copyright
+title: 'Footer: Copyright'
+block_content_bundle: carapace_cb_copyright
+default_content: null
+auto_export: 1
+protected: true

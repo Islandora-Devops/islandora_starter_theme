@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_contact
+id: carapace_fb_footer_contact
+title: 'Footer: Contact'
+block_content_bundle: carapace_cb_footer_contact
+default_content: null
+auto_export: 1
+protected: true

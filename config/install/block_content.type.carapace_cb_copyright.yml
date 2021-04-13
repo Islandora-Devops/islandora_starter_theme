@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: carapace_cb_copyright
+label: 'Footer: Copyright'
+revision: 0
+description: 'Site copyright information'

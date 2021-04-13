@@ -1,0 +1,259 @@
+/* MIXINS BD Bootstrap Barrio, also using mixins from Carapace/Adaptivetheme */
+
+// Return rem value from px value.
+@mixin px-to-rem($size) {
+  font-size: calculateRem($size);
+}
+
+//
+// Alternate buttons
+//
+@each $color,
+$value in $theme-colors {
+	.btn-#{$color} a {
+		@include button-variant($value, $value);
+	}
+}
+
+@each $color,
+$value in $theme-colors {
+	.btn-outline-#{$color} a {
+		@include button-outline-variant($value);
+	}
+}
+
+// Easily generate button style variants.
+
+@mixin button-variant(
+  $button-variant-color,
+  $button-variant-background-color,
+  $has-borders: true,
+  $button-variant-border-width: 1px,
+  $button-variant-border-color: #ccc,
+  $button-variant-border-style: solid,
+  $button-variant-color-hover: $button-variant-color,
+  $button-variant-background-color-hover: $button-variant-background-color,
+  $button-variant-border-color-hover: $button-variant-border-color
+) {
+  color: $button-variant-color;
+  background-color: $button-variant-background-color;
+  //opacity: 1;
+
+  @if $has-borders == true {
+    border: $button-variant-border-width $button-variant-border-color $button-variant-border-style;
+  }
+
+  // Buttons can be links.
+  &:link,
+  &:visited {
+    color: $button-variant-color;
+    background-color: $button-variant-background-color;
+    border-color: $button-variant-border-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $button-variant-color-hover;
+    background-color: $button-variant-background-color-hover;
+    border-color: $button-variant-border-color-hover;
+    //opacity: 0.9;
+  }
+}
+
+
+// SVG
+
+@mixin svg-icon-background($name, $color, $hover-color:null, $position:null, $size:null) {
+	background-image: svg-load('#{$name}.svg', fill='#{$color}');
+	background-position: $position;
+	background-size: $size;
+	background-repeat: no-repeat;
+
+	&:hover {
+		background-image: svg-load('#{$name}.svg', fill='#{$hover-color}');
+	}
+}
+
+@mixin svg-inline($name, $position, $color, $hover-color, $size, $margin) {
+	&::#{$position} {
+    content: '';
+    width: $size;
+    height: $size;
+    display: inline-block;
+    background-image: svg-load('#{$name}.svg', fill='#{$color}');
+    background-position: 0 center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+
+		&:hover {
+			background-image: svg-load('#{$name}.svg', fill='#{$hover-color}');
+		}
+
+    @if $position == after {
+    margin-left: $margin;
+    } @else {
+    margin-right: $margin;
+    }
+	}
+}
+
+@mixin svg-icon-replace($name, $color, $hover-color, $size:null) {
+	background-image: svg-load('#{$name}.svg', fill='#{$color}');
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: -9999px;
+	display: block;
+	width: $size;
+	height: $size;
+	&:hover {
+		background-image: svg-load('#{$name}.svg', fill='#{$hover-color}');
+	}
+}
+
+// Box shadow
+@mixin box-shadow( $h: 10px , $v: 10px , $b: 10px , $s: 0px , $c: rgba(0,0,0,0.75) ) {
+  -webkit-box-shadow: $h $v $b $s $c;
+  -moz-box-shadow: $h $v $b $s $c;
+  box-shadow: $h $v $b $s $c;
+}
+
+// Gradient
+@mixin gradient($start-color, $end-color, $orientation) {
+	background: $start-color;
+	@if $orientation == vertical {
+		// vertical
+		background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+		background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+		background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+		background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
+		background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+	}
+	@else if $orientation == horizontal	{
+		// horizontal
+		background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+		background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+		background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+		background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
+		background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+	}
+	@else	{
+		// radial
+		background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+		background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+		background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+		background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+		background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+	}
+}
+
+// Fade
+@mixin fade($type) {
+  @if $type== "hide" {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s;
+  } @else if $type== "show" {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 1s;
+  }
+}
+
+// Row background color, single.
+@mixin page-row-background-color($background-color, $page-row-fullwidth) {
+  @if $page-row-fullwidth {
+    background-color: $background-color;
+
+    .regions {
+      background: inherit;
+    }
+  }
+  @else {
+    .regions {
+      background-color: $background-color;
+    }
+  }
+}
+
+
+// Row gradients.
+@mixin page-row-gradiant($color-start, $color-stop, $page-row-fullwidth) {
+  @if $page-row-fullwidth {
+    background-color: $color-start;
+    background-image: linear-gradient($color-start 0%, $color-stop 100%);
+
+    .regions {
+      background: inherit;
+    }
+  }
+  @else {
+    .regions {
+      background-color: $color-start;
+      background-image: linear-gradient($color-start 0%, $color-stop 100%);
+    }
+  }
+}
+
+
+// Hide content but maintain accessibility
+@mixin visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  word-wrap: normal;
+  font: 0/0 a;
+}
+
+// Turns off the element-invisible effect
+@mixin visually-hidden-off {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+  width: auto;
+  font-family: inherit;
+}
+
+// Visually hidden but focus-able, e.g. skip links
+@mixin visually-hidden-focusable {
+  @extend visually-hidden;
+  &.focusable {
+    &:active,
+    &:focus {
+      @include visually-hidden-off;
+    }
+  }
+}
+
+// Shift content off screen, can be useful when you really need to do this.
+@mixin offscreen {
+  position: absolute;
+  top: -99999em;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  outline: 0;
+}
+
+@mixin clearfix-micro {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}

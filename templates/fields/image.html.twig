@@ -1,0 +1,87 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+
+{# Strips the width/height. #}
+{%
+  set classes = [
+  style_name ? 'image-style-' ~ style_name|clean_class,
+]
+%}
+
+{#
+/**
+ * This still needs to be reworked.
+ * The IIIF Image Server location variable needs to be fetched.
+ * Admin: admin/config/islandora/iiif
+ */
+#}
+
+{#
+/**
+ * Variables need to be fetched from image style and passed to the iiif URL.
+ * Admin: admin/config/media/image-styles
+ * Fetch image-styles:
+ * - Style Name
+ * - Width
+ * - Height
+ */
+#}
+{# {% set fetch_size = 'width,height' %} #}
+
+{# Build a domain URL. This should be moved into a yml variable. #}
+{% set site_url = url("<current>") %}
+{% set domain = (site_url|render|render|split('/')[0] ~ '//' ~ site_url|render|render|split('/')[2])|lower %}
+
+{# Remove this once a style size is in place #}
+{% if '/styles/medium/' in uri %}
+  {% set fetch_size = '!220,200' %}
+  {% set fetch_url_filter = '/styles/medium/' %}
+{% elseif '/styles/large/' in uri %}
+  {% set fetch_size = '!480,480' %}
+  {% set fetch_url_filter = '/styles/large/' %}
+{% elseif '/media_library/' in uri %}
+  {% set fetch_size = '!220,220' %}
+  {% set fetch_url_filter = '/media_library/' %}
+{% elseif '/styles/max_650x650/' in uri %}
+  {% set fetch_size = '!650,650' %}
+  {% set fetch_url_filter = '/styles/max_650x650/' %}
+{% else %}
+  {% set fetch_url_filter = '/styles/max_650x650/' %}
+  {% set fetch_size = 'full' %}
+{% endif %}
+{# END of remove this section #}
+
+{% set fetch_url = uri|file_url|split('?')[0] %}
+<div class="image__wrapper">
+  <p class="ugly__hack" style="display: none">-</p>
+
+{# Fall back URL for thumbnails #}
+{% set fallback_src = iiif_server_location ~ '/' ~ ('https://born-digital.com/wp-content/uploads/2020/12/Image-from-iOS-3-scaled.jpg')|url_encode ~ '/full/!480,480/0/default.jpg' %}
+
+{# Creates the IIIF URL #}
+{% if domain in fetch_url %}
+  {% set fetch_src = iiif_server_location ~ '/' ~ (dump(uri|file_url)|split('?')[0]|split('"')[1]|split('/fedora/styles/')[0] ~ '/fedora/' ~ dump(uri)|split('/fedora/')[2]|split('?')[0])|url_encode ~ '/full/' ~ fetch_size ~ '/0/default.jpg' %}
+{% elseif '/_flysystem/fedora/' in fetch_url %}
+  {% set fetch_src = iiif_server_location ~ '/' ~ (domain ~ fetch_url|replace({(fetch_url_filter):'/',})|replace({'/fedora/fedora/':'/fedora/',}))|url_encode ~ '/full/' ~ fetch_size ~ '/0/default.jpg' %}
+{% elseif '/_flysystem/' in fetch_url %}
+  {% set fetch_src = iiif_server_location ~ '/' ~ (domain ~ dump(uri|file_url)|split('?')[0]|split('"')[1]|split('/fedora/styles/')[0] ~ dump(uri)|split('/fedora/')[2]|split('?')[0]|replace({'_flysystem':'_flysystem/fedora/',}))|url_encode ~ '/full/' ~ fetch_size ~ '/0/default.jpg' %}
+{% else %}
+  {% set fetch_src = iiif_server_location ~ '/' ~ (domain ~ dump(uri|file_url)|split('?')[0]|split('"')[1]|replace({(fetch_url_filter):'/',})|replace({'/sites/default/files/public/':'/sites/default/files/',}))|url_encode  ~ '/full/' ~ fetch_size ~ '/0/default.jpg' %}
+{% endif %}
+
+{# With IIIF #}
+<img {{ attributes|without('width','height', 'src').addClass(classes) }} src="{{ fetch_src }}" onerror="this.onsrc=null;this.src='{{ fallback_src }}';") />
+
+{# Without IIIF #}
+{# <img{{ attributes|without('width','height').addClass(classes) }} /> #}
+</div>

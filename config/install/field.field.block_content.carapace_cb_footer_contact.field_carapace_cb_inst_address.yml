@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_contact
+    - field.storage.block_content.field_carapace_cb_inst_address
+  module:
+    - text
+id: block_content.carapace_cb_footer_contact.field_carapace_cb_inst_address
+field_name: field_carapace_cb_inst_address
+entity_type: block_content
+bundle: carapace_cb_footer_contact
+label: 'Institution address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

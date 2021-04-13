@@ -1,0 +1,83 @@
+/**
+ * Branding styles for BD Bootstrap Barrio
+ *  - Drupal core branding block.
+ ============================================================================ */
+
+.block--system-branding-block {
+  margin: $large 0;
+}
+
+
+.site-branding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  > * {
+    margin: 0.5rem 0;
+  }
+
+  &__text,
+  &__name,
+  &__slogan {
+    display: block;
+    font-style: normal;
+  }
+
+  // link around the logo image
+  &__logo-link {
+    display: block;
+    margin-right: 1rem;
+  }
+
+  // logo image
+  &__logo-img {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  // wrapper around site name and slogan (byline)
+  &__text {
+    display: block;
+    line-height: 1.5rem;
+    font-weight: normal;
+    margin-right: $xxxx-small;
+  }
+
+  // site name
+  &__name {
+    font-size: $x-large;
+    padding-bottom: $xxx-small;
+
+    @media #{$wide} {
+      font-size: $xxx-large;
+    }
+
+    font-weight: $font-weight-bold;
+
+    &__word-count--1 {}
+    &__word-count--2 {}
+  }
+
+  // site name link
+  &__name-link {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  // site slogan
+  &__slogan {
+    font-style: normal;
+    font-size: $base-font-size;
+    padding: $small 0 0;
+
+    @media #{$wide} {
+      font-size: $base-font-size * 1.25;
+    }
+  }
+}

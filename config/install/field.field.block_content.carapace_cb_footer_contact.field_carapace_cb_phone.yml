@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_footer_contact
+    - field.storage.block_content.field_carapace_cb_phone
+id: block_content.carapace_cb_footer_contact.field_carapace_cb_phone
+field_name: field_carapace_cb_phone
+entity_type: block_content
+bundle: carapace_cb_footer_contact
+label: 'Phone number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

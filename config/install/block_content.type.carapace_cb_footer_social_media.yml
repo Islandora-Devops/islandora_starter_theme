@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: carapace_cb_footer_social_media
+label: 'Footer: Social Media'
+revision: 0
+description: 'Optional institutional social media links'

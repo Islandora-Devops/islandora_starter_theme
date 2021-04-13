@@ -1,0 +1,161 @@
+/**
+ * @file
+ * Theme styling for tabs.
+ */
+
+ .horizontal-tabs-active-tab + details {
+   summary {
+     font-weight: $font-weight-bold;
+   }
+ }
+
+ .horizontal-tabs,
+ .ui-widget.ui-widget-content,
+ .view-eva.view-members {
+   box-shadow: $button-box-shadow;
+   padding: $xx-small;
+   margin-top: $global-padding * 3;
+
+   .item-list .item-list__list,
+   .list-group {
+     display: inline-block;
+     margin: 0;
+     border: 0;
+     padding: 0;
+     list-style: none;
+     width: 100%;
+     height: auto;
+     clear: both;
+   }
+
+   .horizontal-tab-button a strong,
+   .item-list__item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tab a {
+     padding-top: $xx-small;
+     display: block;
+   }
+
+   .item-list__item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tab a,
+   .ui-tabs-anchor {
+     text-decoration: none;
+     border-bottom: none;
+     padding: 0.6em 0 0.425em;
+     margin: 0.5rem 1em 0;
+     position: relative;
+     top: 0;
+     outline: none;
+   }
+
+   .horizontal-tabs-panes,
+   .ui-widget-content {
+     details > .details-wrapper {
+       margin: 0;
+     }
+
+     .form-item,
+     .field,
+     .views-field {
+       padding: $global-padding 0;
+       margin: 0;
+
+       &:last-of-type {
+         border-bottom: none;
+       }
+
+       @media #{$tablet} {
+         // display object details in tab pane as a grid
+         display: grid;
+         grid-template-columns: 1fr 2.5fr;
+         grid-column-gap: 1em;
+       }
+     }
+   }
+
+   .ui-widget-content {
+     padding: 0 1em;
+     margin: 1rem 0;
+
+     .views-label {
+       font-weight: $font-weight-bold;
+     }
+   }
+ }
+
+
+ .view-eva.view-members {
+   margin-top: 0;
+   margin-bottom: $global-padding * 3;
+   padding: $small;
+
+   .views-row {
+     padding: $small;
+   }
+
+   img {
+     margin-bottom: $global-padding;
+   }
+ }
+
+
+.horizontal-tabs {
+  &.lean {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0
+  }
+
+  .details-wrapper {
+    padding: 0;
+  }
+
+  .horizontal-tabs-list .horizontal-tab-button {
+    margin: 0 $medium;
+    a {
+      padding: 0.6em 0;
+      border-bottom: none;
+    }
+  }
+
+  .horizontal-tab-button {
+    min-width: 2em;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+
+  .horizontal-tab-button.selected a strong {
+    cursor: text;
+  }
+
+  .horizontal-tabs-list .horizontal-tab-button.selected strong {
+    display: block;
+    text-decoration: none;
+    padding: $xx-small 0;
+    margin-top: 0.65em;
+  }
+}
+
+.ui-widget.ui-widget-content {
+  div:focus {
+    outline: none;
+  }
+
+  .list-group {
+    padding: 0;
+  }
+}
+
+.a2a_kit + .horizontal-tabs,
+.view-header .horizontal-tabs {
+  .horizontal-tabs-list .horizontal-tab-button:first-of-type {
+    margin-left: 0;
+  }
+}
+
+// Hide empty tabs wrapper for compound object pages
+.ui-widget.ui-widget-content + .field-group-tabs-wrapper,
+.node--view-mode-newspaper .field-group-tabs-wrapper {
+  display: none;
+}

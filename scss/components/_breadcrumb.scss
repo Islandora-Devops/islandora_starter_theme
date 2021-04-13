@@ -1,0 +1,32 @@
+/**
+ * @file
+ * Styles for Bootstrap Barrio's breadcrumbs.
+ */
+
+
+.region-breadcrumb {
+    padding: 0 15px 0.25em;
+    width: 100%;
+}
+
+// Block wrapper for breadcrumbs
+.block-breadcrumbs {
+
+  &:not(.has-title) {
+    margin: 0;
+  }
+
+  .block__content {}
+}
+
+
+.breadcrumb {
+  margin: $large 0;
+  padding: 0;
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    content: $breadcrumb-separator-icon;
+  }
+}

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carapace_cb_copyright
+    - field.storage.block_content.field_carapace_cb_copyright
+  module:
+    - text
+id: block_content.carapace_cb_copyright.field_carapace_cb_copyright
+field_name: field_carapace_cb_copyright
+entity_type: block_content
+bundle: carapace_cb_copyright
+label: Copyright
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

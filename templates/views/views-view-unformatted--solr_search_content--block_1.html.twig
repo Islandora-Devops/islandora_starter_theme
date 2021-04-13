@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="search-results__results {{ additional_classes }}">
+
+{% if title %}
+  <h3 class="view-title">{{ title }}</h3>
+{% endif %}
+{% if facets.views_block__solr_search_content__block_1 %}
+<aside class="search-results__facets">
+  <div class="search-results__facets--wide">
+    {% for facet in facets.views_block__solr_search_content__block_1 %}
+      {{ drupal_block(facet.id,  {label: facet.label|t}) }}
+    {% endfor %}
+  </div>
+</aside>
+{% endif %}
+  <section class="search-results__rows">
+    <div class="search-results__content">
+      {% for row in rows %}
+        {%
+          set row_classes = [
+          default_row_class ? 'views-row',
+        ]
+        %}
+        <div{{ row.attributes.addClass(row_classes) }}>
+          {{ row.content }}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="bottom_pager">
+      {% if bottom_sort %}
+        {{ bottom_sort }}
+      {% endif %}
+      {% if bottom_pager %}
+        {{ bottom_pager }}
+      {% endif %}
+    </div>
+  </section>
+</div>

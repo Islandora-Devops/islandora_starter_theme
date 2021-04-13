@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_logo
+id: carapace_footer_logo
+title: 'Footer: Logo'
+block_content_bundle: footer_logo
+default_content: null
+auto_export: 1
+protected: true

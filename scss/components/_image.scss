@@ -1,0 +1,71 @@
+/**
+ * Images
+ ============================================================================ */
+
+// Set styles for Drupal core data-align classes. These are applied using
+// the CKEditor (wysiwyg). When captions are used images are wrapped in
+// a figure element.
+img,
+.field-type-image__figure,
+.caption-img {
+  > figcaption {
+    display: block;
+  }
+
+  &[class*="align-"] {
+    clear: both;
+    display: block;
+
+    @media #{$wide} {
+      display: inline-block;
+    }
+  }
+
+  @media #{$mobile-isolate} {
+    &[class*="align-"] {
+      margin-bottom: $medium;
+    }
+
+    &[class*="align-"],
+    &[class*="align-"] img {
+      float: none;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    > figcaption {
+      text-align: center;
+    }
+  }
+
+  @media #{$tablet} {
+    > figcaption {
+      text-align: left;
+    }
+
+    &.align-left {
+      margin: 0 $medium $medium 0;
+    }
+
+    &.align-right {
+      margin: 0 0 $medium $medium;
+    }
+
+    &.align-center {
+      margin-bottom: $medium;
+
+      > figcaption {
+        text-align: center;
+      }
+    }
+
+    &.align-center,
+    &.align-center img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+}

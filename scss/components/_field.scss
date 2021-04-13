@@ -1,0 +1,46 @@
+/**
+ * @file
+ * Visual styles for Bootstrap Barrio's field components.
+ */
+
+ // Labels
+ .field__label {
+   font-family: inherit;
+   font-weight: $font-weight-semibold;
+   font-size: $base-font-size;
+   margin: 0;
+ }
+
+
+ // Label inline
+ .field-label-inline {
+   // Remove the margin on inline field labels to preserve vertical formatting.
+   .field__label {
+     margin: 0;
+     display: inline-block;
+     padding: 0 $xxxx-small 0 0; // LTR
+
+     &:after {
+       content: ":";
+     }
+
+     // RTL
+     [dir="rtl"] & {
+       padding: 0 0 0 $xxxx-small;
+     }
+   }
+
+   .field__items,
+   .field__item {
+     display: inline-block;
+   }
+ }
+
+
+ // Label above
+ .field-label-above {
+   .field__label,
+   .field__items {
+     display: block;
+   }
+ }
