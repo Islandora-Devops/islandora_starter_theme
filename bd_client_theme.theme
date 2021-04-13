@@ -1,0 +1,44 @@
+<?php
+/**
+ * @file
+ * Functions to support theming in the BD Client SASS Starterkit subtheme.
+ */
+
+ use Drupal\Core\Form\FormStateInterface;
+
+ /**
+  * Implements hook_theme_suggestions_HOOK_alter for blocks.
+  */
+ function bd_client_theme_theme_suggestions_block_alter(&$suggestions, $variables) {
+
+   // Load theme suggestions for blocks from parent theme.
+   foreach ($suggestions as &$suggestion) {
+     $suggestion = str_replace('bd_client_theme_', 'bd_bootstrap_sass_', $suggestion);
+   }
+ }
+
+ function bd_client_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+     'bg-primary' => t('Primary'),
+     'bg-secondary' => t('Secondary'),
+     'bg-light' => t('Light'),
+     'bg-dark' => t('Dark'),
+     'bg-white' => t('White'),
+     'bg-transparent' => t('Transparent'),
+   ];
+   $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+     'bg-primary' => t('Primary'),
+     'bg-secondary' => t('Secondary'),
+     'bg-light' => t('Light'),
+     'bg-dark' => t('Dark'),
+     'bg-white' => t('White'),
+     'bg-transparent' => t('Transparent'),
+   ];
+   $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['opensans'] = 'Open Sans';
+ }
+
+ function bd_client_theme_preprocess_page(&$variables) {
+  $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
+  if ($fonts)
+    $variables['#attached']['library'][] = (in_array($fonts, ['opensans']) ? 'bd_client_theme' : 'bootstrap_barrio' ) . '/' . $fonts;
+}

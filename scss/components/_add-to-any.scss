@@ -4,43 +4,6 @@
  *  - https://www.drupal.org/project/addtoany
  ============================================================================ */
 
-.addtoany_list {
-  > a {
-    padding: 0 2px;
+.addtoany_list {}
 
-    &:hover {}
-
-    &:after,
-    &:before {
-      display: none;
-    }
-  }
-
-  .addtoany_share_save {
-    padding: 0 4px;
-  }
-}
-
-// Override A2A to use round icons, space to allow target area of 44px
-.addtoany_list.a2a_kit {
-  display: inline-block;
-  margin-bottom: $x-large;
-
-  a > .a2a_svg {
-    border-radius: 50%;
-    margin: 0.125em;
-  }
-
-  a:first-of-type {
-    padding-left: 0;
-
-    .a2a_svg {
-      margin-left: 0;
-    }
-  }
-
-  // LinkedIn requires a square icon space
-  .a2a_button_linkedin > .a2a_svg {
-    border-radius: 4px;
-  }
-}
+.addtoany_list.a2a_kit {}

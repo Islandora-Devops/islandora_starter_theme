@@ -3,80 +3,55 @@
  *  - Drupal core branding block.
  ============================================================================ */
 
-.block--system-branding-block {
-  margin: $large 0;
-}
-
+.block--system-branding-block {}
 
 .site-branding {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  > * {
-    margin: 0.5rem 0;
-  }
-
-  &__text,
-  &__name,
-  &__slogan {
-    display: block;
-    font-style: normal;
-  }
+  flex-wrap: nowrap;
 
   // link around the logo image
-  &__logo-link {
-    display: block;
-    margin-right: 1rem;
-  }
+  &__logo-link {}
 
   // logo image
   &__logo-img {
-    box-shadow: none;
-    border: none;
-    padding: 0;
+    width: 10em;
+    min-width: 8em;
   }
 
   // wrapper around site name and slogan (byline)
-  &__text {
-    display: block;
-    line-height: 1.5rem;
-    font-weight: normal;
-    margin-right: $xxxx-small;
-  }
+  &__text {}
 
   // site name
   &__name {
-    font-size: $x-large;
-    padding-bottom: $xxx-small;
+    span {
+      display: block;
+      line-height: 1.5;
 
-    @media #{$wide} {
-      font-size: $xxx-large;
+      &:first-of-type {
+        border-bottom: 1px solid;
+      }
     }
-
-    font-weight: $font-weight-bold;
-
-    &__word-count--1 {}
-    &__word-count--2 {}
   }
 
   // site name link
-  &__name-link {
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
+  &__name-link {}
 
   // site slogan
-  &__slogan {
-    font-style: normal;
-    font-size: $base-font-size;
-    padding: $small 0 0;
+  &__slogan {}
+}
 
-    @media #{$wide} {
+.site-footer {
+  .site-branding {
+    &__logo-link {
+      margin-right: 1rem;
+    }
+    // logo image
+    &__logo-img {
+      width: 5.5em;
+      min-width: 4.5em;
+    }
+
+    // site name
+    &__name {
       font-size: $base-font-size * 1.25;
     }
   }

@@ -1,0 +1,19 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - bd_client_theme
+id: bd_client_theme_login
+theme: bd_client_theme
+region: footer_third
+weight: -9
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

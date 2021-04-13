@@ -33,16 +33,10 @@
   .navbar-nav {
     .nav-link {
       padding: $xx-small $large;
-      text-decoration: none;
 
       &:hover,
       &:focus {
         text-decoration: none;
-      }
-
-      span {
-        border-bottom: $border-width-heavy $border-style;
-        padding-bottom: $xxx-small;
       }
     }
 
@@ -68,11 +62,6 @@
       &:hover,
       &:focus {
         text-decoration: none;
-      }
-
-      span {
-        border-bottom: $border-width-heavy $border-style;
-        padding-bottom: $xxx-small;
       }
     }
   }

@@ -2,26 +2,3 @@
  * @file
  * Visual styles for BD Bootstrap Barrio's icons.
  */
-
- // block--footer-social-media //
- .block-social__content a {
-   display: inline-block;
-   line-height: 0;
-
-   svg {
-     margin-right: $small;
-     // fill: currentColor; - don't override colors, branding violation
-   }
- }
-
-// FontAwesome icons
-.svg-inline--fa {
-  margin-right: 4px;
-}
-
-.button-action {
-  .svg-inline--fa {
-    margin-left: $xxxx-small;
-    margin-right: 0;
-  }
-}

@@ -1,0 +1,21 @@
+global-styling:
+  version: VERSION
+  js:
+    js/popper.min.js: {}
+    js/bootstrap.min.js: {}
+    js/barrio.js: {}
+    js/custom.js: {}
+  css:
+    component:
+      css/style.css: {}
+      css/color.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+opensans:
+  version: VERSION
+  css:
+    component:
+      fonts/opensans.css: {}
+      //fonts.googleapis.com/css?family=Open+Sans:300,400,700,300italic,400italic: {}

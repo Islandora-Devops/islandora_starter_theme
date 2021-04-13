@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - bd_core
+    - context
+    - islandora
+    - system
+  theme:
+    - bd_client_theme
+id: bd_client_theme_branding
+theme: bd_client_theme
+region: header
+weight: -10
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility:
+  node_has_implicit_parent:
+    id: node_has_implicit_parent
+    negate: false
+    parent_reference_field: field_member_of
+    tid: null
+    logic: and
+    uri: null
+    context_mapping: {  }
+    model_uri: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+    context_mapping: {  }
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+    context_mapping: {  }
+  media_source_mimetype:
+    id: media_source_mimetype
+    mimetype: ''
+    negate: false
+    context_mapping: {  }

@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.islandora_bootstrap_sass = {
+  Drupal.behaviors.bd_client_theme = {
     attach: function(context, settings) {
 
       // Custom code here

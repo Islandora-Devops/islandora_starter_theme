@@ -23,6 +23,7 @@ let gulp = require('gulp'),
 const paths = {
   scss: {
     src: './scss/style.scss',
+    color_src: './scss/color.scss',
     dest: './css',
     watch: './scss/**/*.scss',
     bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
@@ -39,12 +40,13 @@ const paths = {
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src])
+  return gulp.src([paths.scss.bootstrap, paths.scss.color_src, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: [
         './node_modules/bootstrap/scss',
-        '../../../../../../web/themes/contrib/bootstrap_barrio/scss'
+        '../../../../../../web/themes/contrib/bootstrap_barrio/scss',
+        '../bd_bootstrap_sass/scss/style.scss'
       ]
     }).on('error', sass.logError))
     .pipe($.postcss(postcssProcessors))
@@ -84,7 +86,7 @@ function serve () {
     }
   })
 
-  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+  gulp.watch([paths.scss.watch, paths.scss.color_src, paths.scss.bootstrap], styles).on('change', browserSync.reload)
 }
 
 const build = gulp.series(styles, gulp.parallel(js, serve))
