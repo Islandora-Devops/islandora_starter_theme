@@ -1,1 +1,1 @@
-BD Client Subtheme for BD Base Theme / Islandora - Bootstrap 4 - Barrio SASS Starter Kit
+This is for customizing from the Islandora starter Base Theme / Islandora - Bootstrap 4
