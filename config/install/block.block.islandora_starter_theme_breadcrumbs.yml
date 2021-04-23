@@ -3,25 +3,26 @@ status: true
 dependencies:
   module:
     - bd_core
+    - block_class
     - context
     - islandora
     - system
   theme:
-    - bd_client_theme
-id: bd_client_theme_branding
-theme: bd_client_theme
-region: header
-weight: -10
+    - islandora_starter_theme
+third_party_settings:
+  block_class:
+    classes: site__islandora_breadcrumbs
+id: islandora_starter_theme_breadcrumbs
+theme: islandora_starter_theme
+region: breadcrumb
+weight: -9
 provider: null
-plugin: system_branding_block
+plugin: system_breadcrumb_block
 settings:
-  id: system_branding_block
-  label: 'Site branding'
+  id: system_breadcrumb_block
+  label: Breadcrumbs
   provider: system
   label_display: '0'
-  use_site_logo: true
-  use_site_name: true
-  use_site_slogan: true
 visibility:
   node_has_implicit_parent:
     id: node_has_implicit_parent

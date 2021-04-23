@@ -4,9 +4,9 @@ dependencies:
   module:
     - help
   theme:
-    - bd_client_theme
-id: bd_client_theme_help
-theme: bd_client_theme
+    - islandora_starter_theme
+id: islandora_starter_theme_help
+theme: islandora_starter_theme
 region: content
 weight: -6
 provider: null

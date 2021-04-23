@@ -7,9 +7,9 @@ dependencies:
     - islandora
     - system
   theme:
-    - bd_client_theme
-id: bd_client_theme_content
-theme: bd_client_theme
+    - islandora_starter_theme
+id: islandora_starter_theme_content
+theme: islandora_starter_theme
 region: content
 weight: -4
 provider: null

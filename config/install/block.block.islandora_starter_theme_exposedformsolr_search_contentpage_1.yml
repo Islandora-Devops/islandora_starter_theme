@@ -6,9 +6,9 @@ dependencies:
   module:
     - views
   theme:
-    - bd_client_theme
-id: bd_client_theme_exposedformsolr_search_contentpage_1
-theme: bd_client_theme
+    - islandora_starter_theme
+id: islandora_starter_theme_exposedformsolr_search_contentpage_1
+theme: islandora_starter_theme
 region: highlighted
 weight: -9
 provider: null

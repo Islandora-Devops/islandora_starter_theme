@@ -4,9 +4,9 @@ dependencies:
   module:
     - user
   theme:
-    - bd_client_theme
-id: bd_client_theme_login
-theme: bd_client_theme
+    - islandora_starter_theme
+id: islandora_starter_theme_login
+theme: islandora_starter_theme
 region: footer_third
 weight: -9
 provider: null

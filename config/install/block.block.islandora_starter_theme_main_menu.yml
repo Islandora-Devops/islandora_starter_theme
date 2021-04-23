@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - bd_client_theme
-id: bd_client_theme_main_menu
-theme: bd_client_theme
+    - islandora_starter_theme
+id: islandora_starter_theme_main_menu
+theme: islandora_starter_theme
 region: primary_menu
 weight: -9
 provider: null

@@ -6,9 +6,9 @@ dependencies:
   module:
     - fixed_block_content
   theme:
-    - bd_client_theme
-id: bd_client_theme_footersocialmedia
-theme: bd_client_theme
+    - islandora_starter_theme
+id: islandora_starter_theme_footersocialmedia
+theme: islandora_starter_theme
 region: footer_second
 weight: -8
 provider: null
