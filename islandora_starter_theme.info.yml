@@ -4,8 +4,7 @@ description: 'Islandora Starter Theme - SASS starter kit for a Bootstrap Barrio 
 version: VERSION
 core: 8.x
 core_version_requirement: ^8 || ^9
-base theme: bd_bootstrap_sass
-
+base theme: islandora_base_theme
 libraries:
   - bd_client_theme/global-styling
 libraries-override:

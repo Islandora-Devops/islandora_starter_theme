@@ -7,5 +7,6 @@
     "require": {
         "drupal/bootstrap_barrio": "5.x-dev",
         "drupal/bootstrap_sass": "5.x-dev"
+        "islandora/islandora_starter_theme": "dev-main"
     }
 }
