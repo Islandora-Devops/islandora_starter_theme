@@ -46,7 +46,7 @@ function styles () {
       includePaths: [
         './node_modules/bootstrap/scss',
         '../../../../../../web/themes/contrib/bootstrap_barrio/scss',
-        '../bd_bootstrap_sass/scss/style.scss'
+        '../islandora_base_theme/scss/style.scss'
       ]
     }).on('error', sass.logError))
     .pipe($.postcss(postcssProcessors))

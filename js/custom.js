@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.bd_client_theme = {
+  Drupal.behaviors.islandora_starter_theme = {
     attach: function(context, settings) {
 
       // Custom code here

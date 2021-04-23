@@ -6,7 +6,7 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: islandora_base_theme
 libraries:
-  - bd_client_theme/global-styling
+  - islandora_starter_theme/global-styling
 libraries-override:
   bootstrap_barrio/global-styling: false
   bootstrap_barrio/file: false
