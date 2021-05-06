@@ -1,8 +1,8 @@
 palette:
   base: '#000000'
   text: '#000000'
-  highlights: '#E63946'
-  secondaryhighlights: '#F1FAEE'
+  highlights: '#F1FAEE'
+  secondaryhighlights: '#E63946'
   link: '#000000'
   linkalt: '#1D3557'
   body: '#ffffff'
