@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - islandora_install_profile_demo_core
     - context
     - islandora
     - system
