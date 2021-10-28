@@ -3,10 +3,10 @@
     "type": "drupal-theme",
     "description": "SASS subtheme for Barrio Theme.",
     "homepage": "http://drupal.org/project/bootstrap_sass",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "require": {
         "drupal/bootstrap_barrio": "5.x-dev",
         "drupal/bootstrap_sass": "5.x-dev",
-        "islandora/islandora_starter_theme": "dev-main"
+        "islandora/islandora_base_theme": "dev-main"
     }
 }
