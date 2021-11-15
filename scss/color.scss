@@ -61,13 +61,15 @@ video,
 }
 
 .field--name-field-media-audio-file,
-.field--name-field-media-video-file {
+.field--name-field-media-video-file,
+.field--name-field-media-oembed-video {
   background-color: $border-color;
 }
 
 .media-download {
   .field--name-field-media-audio-file,
-  .field--name-field-media-video-file {
+  .field--name-field-media-video-file,
+  .field--name-field-media-oembed-video {
     background-color: transparent;
   }
 }
@@ -200,20 +202,6 @@ h2, .h2 {
   border-color: $regions-background-color;
 }
 
-// themes with dark region background color
-.region--dark {
-  color: $text-background-color-normal;
-
-  a,
-  a:hover,
-  a:focus {
-    color: $text-background-color-normal;
-  }
-
-  svg path {
-    fill: $text-background-color-normal !important;
-  }
-}
 
 //  Page Rows - these match the Site Builder layout.
 
@@ -349,7 +337,7 @@ h2, .h2 {
 
 // facets
 .block-config-provider--facets-summary,
-.block-facet--links {
+[class*="block-facet--"] {
   .block__title {
     background-color: $body-background-color;
     border-bottom-color: $border-color;
@@ -430,13 +418,6 @@ h2, .h2 {
     @media #{$wide} {
       border-right: 1px solid $page-footer-color;
     }
-  }
-}
-
-// themes with dark region background color
-.region--dark {
-  &.region-footer-first {
-    border-right-color: $text-background-color-normal;
   }
 }
 
@@ -684,6 +665,8 @@ h2, .h2 {
         border-color: transparent;
       }
 
+      &:hover,
+      &:focus,
       &.active {
         color: $link-color;
 
@@ -691,23 +674,14 @@ h2, .h2 {
           border-color: $link-color;
         }
       }
-
-      &:hover,
-      &:focus,
-      &.active:hover,
-      &.active:focus  {
-        color: $resp-menu-hover-color;
-        background-color: $resp-menu-hover-background-color;
-
-        span {
-          border-color: $resp-menu-hover-color;
-        }
-      }
     }
   }
 }
 
-.dropdown-menu {
+.dropdown .dropdown-menu {
+  background-color: $resp-menu-background-color;
+  border-color: $resp-menu-color;
+
   .dropdown-item,
   .dropdown-item.active,
   .dropdown-item:active {
@@ -733,63 +707,8 @@ h2, .h2 {
 
     &:hover,
     &:focus {
-      color: $resp-menu-hover-color;
-      background-color: $resp-menu-hover-background-color;
-
       span {
-        border-color: $resp-menu-hover-color;
-      }
-    }
-
-    &:hover,
-    &:focus,
-      &.active:hover,
-      &.active:focus  {
-        color: $resp-menu-hover-color;
-        background-color: $resp-menu-hover-background-color;
-      }
-  }
-}
-
-// themes with dark region background color
-.region--dark {
-  .menu--main {
-    .navbar-nav {
-      > .nav-item .nav-link {
-        color: $text-background-color-normal;
-        background-color: transparent;
-
-        &.active {
-          color: $text-background-color-normal;
-        }
-
-        &:hover,
-        &:focus,
-        &.active:hover,
-        &.active:focus {
-          color: $page-header-background-color;
-          background-color: $text-background-color-normal;
-        }
-      }
-    }
-  }
-
-  .dropdown-menu {
-    .dropdown-item,
-    .dropdown-item.active,
-    .dropdown-item:active {
-      color: $text-background-color-normal;
-      background-color: $text-background-color-normal;
-    }
-
-    a {
-      color: $text-background-color-normal;
-      background-color: $text-background-color-normal;
-
-      &:hover,
-      &:focus {
-        color: $text-background-color-normal;
-        background-color: $text-background-color-normal;
+        border-color: $link-color;
       }
     }
   }
@@ -966,11 +885,13 @@ input[type="week"] {
 
 /**
  * Collapsible details.
- *
- * @see collapse.js
- * @thanks http://nicolasgallagher.com/css-background-image-hacks/
  */
+
 details {
+  border-color: $form-border-color;
+}
+
+details:not(.search-results__facets--mobile) {
   border-color: $form-border-color;
   background-color: $form-details-background-color;
 
@@ -980,24 +901,29 @@ details {
 
     summary {
       border-color: $border-color-light;
+      border-bottom-color: $form-border-color;
       background-color: $border-color-light;
+    }
+  }
 
-      &:hover,
-      &:focus {
-        border-color: $success-border-color;
-      }
+  summary {
+    background-color: $form-details-background-color;
+
+    &:hover,
+    &:focus {
+      background-color: $border-color-light;
     }
   }
 }
 
-summary {
+summary,
+.search-results__facets--mobile summary {
   border-color: $form-border-color;
-  background-color: $form-details-background-color;
 
   &:hover,
   &:focus {
     outline: none;
-    background-color: $border-color-light;
+    background-color: $body-background-color;
   }
 }
 
@@ -1214,6 +1140,9 @@ form .marker {
 
   .horizontal-tabs-panes,
   .ui-widget-content {
+    color: $text-color;
+    background-color: $body-background-color;
+
     .form-item,
     .field,
     .views-field {
@@ -1332,10 +1261,20 @@ button,
 }
 
 
-// Preview buttons should be neutral.
-#edit-preview {
-  background-color: $form-background-color;
-  color: $button-border-color;
+// Secondary button styles for second form aaction buttons
+.form-actions {
+  .button + .button {
+    color: $button-secondary-text-color;
+    background-color: $button-secondary-background-color;
+    border-color: $button-secondary-border-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $button-secondary-background-hover-color;
+      border-color: $button-secondary-background-hover-color;
+    }
+  }
 }
 
 
@@ -2007,6 +1946,89 @@ input.cke_dialog_ui_input_password {
      width: 100%;
  }
 
- .slick>div {
-     margin: 0 15px;
- }
+.slick>div {
+    margin: 0 15px;
+}
+
+// override colors for themes with dark region background color
+.region--dark {
+  color: $text-background-color-normal;
+
+  &.region-footer-first {
+    border-right-color: $text-background-color-normal;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    color: $text-background-color-normal;
+  }
+
+  svg path {
+    fill: $text-background-color-normal !important;
+  }
+
+  .navbar-nav {
+    > .nav-item .nav-link {
+      color: $text-background-color-normal;
+      background-color: transparent;
+
+      &:hover,
+      &:focus,
+      &.active  {
+        color: $text-background-color-normal;
+        background-color: transparent;
+
+        span {
+          border-color: $text-background-color-normal;
+        }
+      }
+    }
+  }
+
+  + .navbar-toggler {
+    color: $text-background-color-normal;
+    background-color: transparent;
+  }
+
+  .dropdown-menu {
+    .dropdown-item a {
+      color: $resp-menu-color;
+      background-color: $resp-menu-background-color;
+
+      span {
+        border-color: transparent;
+      }
+
+      &.active {
+        color: $link-color;
+
+        span {
+          border-color: $link-color;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        span {
+          border-color: $resp-menu-hover-color;
+        }
+      }
+    }
+  }
+
+  .nav-link--user-login {
+    color: $accent-shade;
+    background-color: $text-background-color-normal;
+    border-color: $text-background-color-normal;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $link-color;
+      background-color: $text-background-color-normal;
+      border-color: $text-background-color-normal;
+      opacity: 1;
+    }
+  }
+}

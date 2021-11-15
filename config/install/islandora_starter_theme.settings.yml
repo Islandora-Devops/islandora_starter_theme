@@ -40,12 +40,12 @@ bootstrap_barrio_region_clean_top_header: 0
 bootstrap_barrio_region_class_top_header: row
 bootstrap_barrio_region_clean_top_header_form: 0
 bootstrap_barrio_region_class_top_header_form: row
-bootstrap_barrio_region_clean_header: 1
-bootstrap_barrio_region_class_header: region--dark
+bootstrap_barrio_region_clean_header: 0
+bootstrap_barrio_region_class_header: ''
 bootstrap_barrio_region_clean_header_form: 0
 bootstrap_barrio_region_class_header_form: row
-bootstrap_barrio_region_clean_primary_menu: 1
-bootstrap_barrio_region_class_primary_menu: region--dark
+bootstrap_barrio_region_clean_primary_menu: 0
+bootstrap_barrio_region_class_primary_menu: ''
 bootstrap_barrio_region_clean_secondary_menu: 0
 bootstrap_barrio_region_class_secondary_menu: row
 bootstrap_barrio_region_clean_page_top: 0
@@ -95,7 +95,7 @@ bootstrap_barrio_navbar_affix: 0
 bootstrap_barrio_sidebar_first_affix: 0
 bootstrap_barrio_sidebar_second_affix: 0
 bootstrap_barrio_scroll_spy: ''
-bootstrap_barrio_google_fonts: opensans
+bootstrap_barrio_google_fonts: ''
 bootstrap_barrio_bootstrap_icons: 0
 bootstrap_barrio_icons: ''
 bootstrap_barrio_table_head: ''

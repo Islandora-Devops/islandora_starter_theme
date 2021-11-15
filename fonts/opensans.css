@@ -1,3 +1,20 @@
 h1, h2, h1 a, h2 a, h3, h4, h5, h6, h3 a, body, p, a, li {
     font-family: 'Open Sans', sans-serif;
 }
+
+/*
+ * Font override for Bartik's ui-widget component
+ */
+.ui-widget {
+  font-family: 'Open Sans', sans-serif;
+  font-size: $font-size-base;
+
+  .ui-widget,
+  input,
+  select,
+  textarea,
+  button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $font-size-base;
+  }
+}
