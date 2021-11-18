@@ -5,6 +5,6 @@
     "homepage": "http://drupal.org/project/bootstrap_sass",
     "license": "GPL-2.0+",
     "require": {
-        "islandora/islandora_base_theme": "dev-bd-d9-update"
+        "islandora/islandora_base_theme": "dev-bd-d9-updates"
     }
 }
