@@ -6,53 +6,21 @@
 .block--system-branding-block {}
 
 .site-branding {
-  flex-wrap: nowrap;
-
   // link around the logo image
   &__logo-link {}
 
   // logo image
-  &__logo-img {
-    width: 10em;
-    min-width: 8em;
-  }
+  &__logo-img {}
 
   // wrapper around site name and slogan (byline)
   &__text {}
 
   // site name
-  &__name {
-    span {
-      display: block;
-      line-height: 1.5;
-
-      &:first-of-type {
-        border-bottom: 1px solid;
-      }
-    }
-  }
+  &__name {}
 
   // site name link
   &__name-link {}
 
   // site slogan
   &__slogan {}
-}
-
-.site-footer {
-  .site-branding {
-    &__logo-link {
-      margin-right: 1rem;
-    }
-    // logo image
-    &__logo-img {
-      width: 5.5em;
-      min-width: 4.5em;
-    }
-
-    // site name
-    &__name {
-      font-size: $base-font-size * 1.25;
-    }
-  }
 }

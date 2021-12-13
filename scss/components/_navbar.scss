@@ -26,69 +26,27 @@
 }
 
 .menu--main {
-  &.block {
-    margin: 0 0 $medium;
-  }
+  &.block {}
 
   .navbar-nav {
     .nav-link {
-      padding: $xx-small $large;
 
       &:hover,
-      &:focus {
-        text-decoration: none;
-      }
-    }
+      &:focus {}
 
-    @media #{$wide} {
-      margin-left: -$large;
+      span {}
     }
   }
 }
 
 .dropdown-menu {
-  padding: 0;
-  margin-top: 0;
-  border: none;
-
   .dropdown-item {
-    padding: 0;
-
     a {
-      display: block;
-      padding: $xx-small $large;
-      font-size: $h6-font-size;
-
       &:hover,
-      &:focus {
-        text-decoration: none;
-      }
+      &:focus {}
     }
   }
 }
 
 // Button for toggling the navbar when in its collapsed state
-.navbar-toggler {
-  border-color: transparent;
-  box-shadow: none;
-}
-
-// Generate series of `.navbar-expand-*` responsive classes for configuring
-// where your navbar collapses.
-.navbar-expand {
-  @each $breakpoint in map-keys($grid-breakpoints) {
-    $next: breakpoint-next($breakpoint, $grid-breakpoints);
-    $infix: breakpoint-infix($next, $grid-breakpoints);
-
-    &#{$infix} {
-      @include media-breakpoint-up($next) {
-
-        .navbar-nav {
-          .nav-link {
-            padding: $xx-small $large;
-          }
-        }
-      }
-    }
-  }
-}
+.navbar-toggler {}

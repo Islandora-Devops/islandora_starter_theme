@@ -1,10 +1,11 @@
-name: Islandora Starter Theme 
+name: Islandora Starter Theme
 type: theme
 description: 'Islandora Starter Theme - SASS starter kit for a Bootstrap Barrio SubTheme.'
 version: VERSION
 core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: islandora_base_theme
+
 libraries:
   - islandora_starter_theme/global-styling
 libraries-override:
