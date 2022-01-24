@@ -338,7 +338,8 @@ h2, .h2 {
 // facets
 .block-config-provider--facets-summary,
 [class*="block-facet--"] {
-  .block__title {
+  .block__title,
+  h3 {
     background-color: $body-background-color;
     border-bottom-color: $border-color;
     color: $text-color;
