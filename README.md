@@ -18,3 +18,12 @@ $ cd codebase/web/themes/contrib/islandora_starter_theme
 $ npm install
 $ gulp styles
 ```
+
+Last compiled with the following versions:
+```
+~/islandora_starter_theme# nodejs --version
+v10.19.0
+~/islandora_starter_theme# gulp --version
+CLI version: 2.3.0
+Local version: 4.0.2
+```
