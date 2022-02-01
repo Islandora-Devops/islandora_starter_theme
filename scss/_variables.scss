@@ -63,8 +63,8 @@ $base-color               : #000000;
 // Text colors
 // -----------------------------------------------------------------------------
 $text-color               : #1a2747;
-$text-color-light         : #dbf5f0;
-$text-color-medium        : #0c6170;
+$text-color-light         : #dbf5ea;
+$text-color-medium        : #0c7040;
 
 $text-background-color-light  : $text-color-light;
 $text-background-color-normal : #ffffff;
@@ -76,7 +76,7 @@ $site-name : $text-color-medium;
 // Link colors
 // -----------------------------------------------------------------------------
 $link-color               : $text-color-medium;
-$link-alt-color           : #0e7e92;
+$link-alt-color           : #0e924f;
 $link-hover-color         : $link-alt-color;
 $link-active-color        : $link-alt-color;
 $link-visited-color       : $link-alt-color;
@@ -92,7 +92,7 @@ $border-width-heavy       : 0.25rem;
 $border-style             : solid;
 $border-color             : #e5e5e5;
 $border-color-light       : #f5f5f5;
-$border-color-alt         : #a4e5e0;
+$border-color-alt         : #a4e5c0;
 $border-radius            :  0.125em;
 $border-radius-round      : 1em;
 $pagination-active-border-color : $border-color;
