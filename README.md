@@ -11,7 +11,7 @@ config/install/color.theme.islandora_starter_theme.yml
 ## CSS
 Comes with precomiled SCSS files. 
 
-### To compile:
+### To compile locally:
 You will need nodejs, npm, gulp, gulp-cli, sass installed.
 ```
 $ cd codebase/web/themes/contrib/islandora_starter_theme
@@ -26,4 +26,11 @@ v10.19.0
 ~/islandora_starter_theme# gulp --version
 CLI version: 2.3.0
 Local version: 4.0.2
+```
+
+### To compile with Docker:
+You will start a Docker container that includes nodejs, npm, gulp, gulp-cli, sass already installed.
+```shell
+docker build -t idc_theme_build .
+docker run --rm -v $(pwd):/usr/src/project islandora_starter_theme bash -c "bash autobuild.sh"
 ```
